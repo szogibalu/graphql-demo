@@ -1,3 +1,4 @@
+# root
 type Query {
     # list all books
     books: [Book!]
@@ -7,12 +8,14 @@ type Query {
     book(id: Int!): Book
 }
 
+# book
 type Book {
     id: Int!
     name: String!
     author: Author!
 }
 
+# author
 type Author {
     id: Int!
     name: String!
