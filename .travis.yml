@@ -5,3 +5,5 @@ jdk:
 script:
   - ./mvnw test
   - ./mvnw verify
+  before_install:
+    - chmod +x mvnw
