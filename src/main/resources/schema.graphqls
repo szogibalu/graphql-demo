@@ -1,0 +1,19 @@
+type Query {
+    # list all books
+    books: [Book!]
+    # list all authors
+    authors: [Author!]
+    # find author by id
+    book(id: Int!): Book
+}
+
+type Book {
+    id: Int!
+    name: String!
+    author: Author!
+}
+
+type Author {
+    id: Int!
+    name: String!
+}
