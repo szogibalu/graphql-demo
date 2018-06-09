@@ -3,7 +3,4 @@ sudo: required
 jdk:
   oraclejdk8
 script:
-  - ./mvnw test
   - ./mvnw verify
-before_install:
-  - chmod +x mvnw
