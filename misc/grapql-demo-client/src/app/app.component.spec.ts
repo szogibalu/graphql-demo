@@ -1,12 +1,16 @@
 import {async, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
+import {BookComponent} from "./book/book.component";
+import {ApolloModule} from "apollo-angular";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        BookComponent
       ],
+      imports: [ApolloModule]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
