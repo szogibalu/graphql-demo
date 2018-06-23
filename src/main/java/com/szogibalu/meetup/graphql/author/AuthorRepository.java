@@ -13,8 +13,8 @@ public class AuthorRepository {
 
     public AuthorRepository() {
         this.authors = newConcurrentMap();
-        this.authors.put(1, new Author(1, "J.R. Tolkien"));
-        this.authors.put(2, new Author(2, "J. K. Rowling"));
+        this.authors.put(1, new Author(1, "J.R. Tolkien", "British"));
+        this.authors.put(2, new Author(2, "J. K. Rowling", "British"));
     }
 
     public Author findById(int id) {

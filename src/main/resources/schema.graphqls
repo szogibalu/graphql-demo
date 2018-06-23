@@ -6,6 +6,16 @@ type Query {
     listAuthors: [Author!]
     # find author by id
     findBookById(id: Int!): Book
+    # list all readers
+    listReaders: [Reader!]
+    # list all persons
+    listPersons: [Person!]
+}
+
+#person
+interface Person {
+    id: Int!
+    name: String!
 }
 
 # book
@@ -17,7 +27,15 @@ type Book {
 }
 
 # author
-type Author {
+type Author implements Person {
     id: Int!
     name: String!
+    nationality: String!
+}
+
+#reader
+type Reader implements Person {
+    id: Int!
+    name: String!
+    books:[Book!]
 }
