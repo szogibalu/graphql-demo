@@ -1,8 +1,9 @@
 <div *ngFor="let book of books | async">
   <div class="card" style="width: 100%; margin-top: 10px">
     <div class="card-body">
-      <h5 class="card-title">{{book.name}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">by {{book.author.name}}</h6>
+      <h4 class="card-title">{{book.name}}</h4>
+      <h5 class="card-subtitle mb-2 text-muted">by {{book.author.name}}</h5>
+      <h6 class="card-subtitle mb-3 text-muted">{{book.publicationYear}}</h6>
     </div>
   </div>
 </div>

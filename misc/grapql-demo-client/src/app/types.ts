@@ -1,6 +1,7 @@
 export type Book = {
   name: string;
   author: Author;
+  publicationYear: number
 }
 
 export type Author = {
@@ -8,5 +9,5 @@ export type Author = {
 }
 
 export type Query = {
-  books: Book[];
+  listBooks: Book[];
 }

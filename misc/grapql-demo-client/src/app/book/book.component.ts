@@ -19,19 +19,20 @@ export class BookComponent implements OnInit {
   ngOnInit() {
     this.books = this.apollo.watchQuery<Query>({
       query: gql`
-        query books {
-          books {
+        query {
+          listBooks {
             name
             author {
               name
             }
+            publicationYear
           }
         }
       `
     })
     .valueChanges
     .pipe(
-      map(result => result.data.books)
+      map(result => result.data.listBooks)
     );
   }
 }
