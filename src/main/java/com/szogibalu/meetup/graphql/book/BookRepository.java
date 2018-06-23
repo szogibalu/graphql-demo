@@ -13,7 +13,6 @@ public class BookRepository {
 
     public BookRepository() {
         this.books = newConcurrentMap();
-
         books.put(1, new Book(1, "The Lord of the Rings", 1));
     }
 

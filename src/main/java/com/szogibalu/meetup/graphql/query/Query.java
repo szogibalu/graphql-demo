@@ -20,15 +20,15 @@ public class Query implements GraphQLQueryResolver {
         this.authorRepository = authorRepository;
     }
 
-    public Iterable<Book> books() {
+    public Iterable<Book> listBooks() {
         return bookRepository.findAll();
     }
 
-    public Iterable<Author> authors() {
+    public Iterable<Author> listAuthors() {
         return authorRepository.findAll();
     }
 
-    public Book book(int id) {
+    public Book findBookById(int id) {
         return bookRepository.findById(id);
     }
 

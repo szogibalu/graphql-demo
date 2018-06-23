@@ -47,9 +47,8 @@ public class DemoApplicationTests {
         assertThat(applicationContext).isNotNull();
     }
 
-
     @Test
-    public void test() {
+    public void listBooks() {
         ResponseEntity<String> response = postRequest(graphQLTestUtils.createJsonQuery(bookQueryString));
 
         assertEquals(OK, response.getStatusCode());
@@ -57,7 +56,7 @@ public class DemoApplicationTests {
         JsonNode parsedResponse = graphQLTestUtils.parse(response.getBody());
         assertNotNull(parsedResponse);
 
-        JsonNode firstBook = parsedResponse.get("data").get("books").get(0);
+        JsonNode firstBook = parsedResponse.get("data").get("listBooks").get(0);
         assertThat(firstBook.get("name").asText()).isEqualTo("The Lord of the Rings");
         assertThat(firstBook.get("author").get("name").asText()).isEqualTo("J.R. Tolkien");
     }

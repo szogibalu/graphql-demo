@@ -1,11 +1,11 @@
 # root
 type Query {
     # list all books
-    books: [Book!]
+    listBooks: [Book!]
     # list all authors
-    authors: [Author!]
+    listAuthors: [Author!]
     # find author by id
-    book(id: Int!): Book
+    findBookById(id: Int!): Book
 }
 
 # book
