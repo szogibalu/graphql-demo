@@ -10,9 +10,10 @@ import com.szogibalu.meetup.graphql.reader.ReaderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.Set;
 
-import static com.google.common.collect.Lists.newArrayList;
+import static com.google.common.collect.Sets.newHashSet;
+import static com.google.common.collect.Sets.union;
 
 @Component
 public class Query implements GraphQLQueryResolver {
@@ -44,15 +45,10 @@ public class Query implements GraphQLQueryResolver {
         return readerRepository.findAll();
     }
 
-    public Iterable listPersons() {
-        List<Reader> readers = newArrayList(readerRepository.findAll());
-        List<Author> authors = newArrayList(authorRepository.findAll());
-
-        List list = newArrayList();
-        list.addAll(readers);
-        list.addAll(authors);
-
-        return list;
+    public Iterable<?> listPersons() {
+        Set<Reader> readers = newHashSet(readerRepository.findAll());
+        Set<Author> authors = newHashSet(authorRepository.findAll());
+        return union(readers, authors);
     }
 
 }
