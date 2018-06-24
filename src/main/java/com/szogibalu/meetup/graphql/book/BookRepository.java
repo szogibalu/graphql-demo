@@ -1,5 +1,6 @@
 package com.szogibalu.meetup.graphql.book;
 
+import org.apache.commons.lang3.RandomUtils;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;
@@ -23,6 +24,15 @@ public class BookRepository {
         books.put(7, new Book(7, "Harry Potter and the Half-Blood Prince ", 2, 2005));
         books.put(8, new Book(8, "Harry Potter and the Deathly Hallows ", 2, 2007));
     }
+
+    public Book saveBook(Book book) {
+        Integer id = RandomUtils.nextInt();
+        book.setId(id);
+        this.books.put(id, book);
+        return book;
+    }
+
+    ;
 
     public Iterable<Book> findAll() {
         return books.values();

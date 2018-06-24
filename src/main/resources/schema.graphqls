@@ -12,10 +12,19 @@ type Query {
     listPersons: [Person!]
 }
 
-#person
-interface Person {
-    id: Int!
+type Mutation {
+    addBook(book: BookInput): Book
+}
+
+input BookInput {
     name: String!
+    author: AuthorInput!
+    publicationYear: Int!
+}
+
+input AuthorInput {
+    name: String!
+    nationality: String!
 }
 
 # book
@@ -24,6 +33,12 @@ type Book {
     name: String!
     author: Author!
     publicationYear: Int!
+}
+
+#person
+interface Person {
+    id: Int!
+    name: String!
 }
 
 # author

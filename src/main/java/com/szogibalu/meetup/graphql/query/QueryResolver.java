@@ -16,14 +16,14 @@ import static com.google.common.collect.Sets.newHashSet;
 import static com.google.common.collect.Sets.union;
 
 @Component
-public class Query implements GraphQLQueryResolver {
+public class QueryResolver implements GraphQLQueryResolver {
 
     private final BookRepository bookRepository;
     private final AuthorRepository authorRepository;
     private final ReaderRepository readerRepository;
 
     @Autowired
-    public Query(BookRepository bookRepository, AuthorRepository authorRepository, ReaderRepository readerRepository) {
+    public QueryResolver(BookRepository bookRepository, AuthorRepository authorRepository, ReaderRepository readerRepository) {
         this.bookRepository = bookRepository;
         this.authorRepository = authorRepository;
         this.readerRepository = readerRepository;

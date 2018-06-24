@@ -1,5 +1,6 @@
 package com.szogibalu.meetup.graphql.author;
 
+import org.apache.commons.lang3.RandomUtils;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;
@@ -23,5 +24,12 @@ public class AuthorRepository {
 
     public Iterable<Author> findAll() {
         return authors.values();
+    }
+
+    public Author saveAuthor(Author author) {
+        Integer id = RandomUtils.nextInt();
+        author.setId(id);
+        this.authors.put(id, author);
+        return author;
     }
 }

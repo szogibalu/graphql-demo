@@ -7,10 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Author {
+public class AuthorInput {
 
-    private Integer id;
     private String name;
     private String nationality;
 
+    public Author get() {
+        return new Author(null, name, nationality);
+    }
 }
